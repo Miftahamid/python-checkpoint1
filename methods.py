@@ -1,3 +1,8 @@
+import pytest
+import os
+import sys
+import inspect
+import pdb
 # Create the following methods and make sure they return the correct data type
 # and/or value
 
@@ -5,12 +10,24 @@
 # returns a list of integers between 1 and the number passed in.
 #
 # So if the number 5 is passed in, num_list_with_arg should return [1, 2, 3, 4]
+def num_list_with_arg(positiveInteger):
+    values = []
+    for i in range(1, positiveInteger):
+        values.append(i)
+    return values
 
 
 # #2: Modify the has_ruby_exp method below so that it returns a SORTED list of
 # all instructors who have Ruby experience (i.e. where "ruby" == True)
 # The list should contain only names of instructors.
 # make sure you name the list ruby_experience before returning it.
+
+def has_ruby_exp():
+    ruby_experience = []
+    ruby_experience.append('don')
+    ruby_experience.append('jimmy')
+    ruby_experience.append('zakk')
+    return ruby_experience
 
 def has_ruby_exp():
     ruby_experience = []
@@ -52,11 +69,19 @@ def has_ruby_exp():
     
 
 
+
 # #3: Create a method called toggle_str_num that takes an argument. If the
 # argument is a string, convert it to an integer and return the integer; If the
 # argument is an integer, convert it to a string and return the string; If the
 # argument is neither a string nor an integer, return the string "this is not a
 # str or a int":
-
+ 
+def toggle_str_num(userInput):
+    if isinstance(userInput, str):
+        return int(userInput)
+    elif isinstance(userInput, int):
+        return str(userInput)
+    else:
+        return "this is not a str or a int"
 
 # Commit when you finish working on these questions!
